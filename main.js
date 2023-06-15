@@ -66,6 +66,38 @@ function getQuestion() {
 
 }
 
+submitBtn.addEventListener('click', () => submitQuiz());
+function submitQuiz() {
+    const data = questions[index];
+    const ans = getAnswer();
+    if (ans === data.correct) {
+        right++;
+    } else {
+        wrong++;
+    }
+    index++;
+    getQuestion();
+    return;
+}
+function getAnswer() {
+    let answer;
+    optionInputs.forEach(input => {
+        if (input.checked) {
+            // console.log(input.value);
+            answer = input.value;
+        }
+    })
+    return answer;
+}
+function reset() {
+    optionInputs.forEach(input => input.checked = false)
+}
 
+function endQuiz() {
+    document.getElementById('box').innerHTML = `
+    <h3 class="row">Here are the results from Quiz.</h3>
+    <h2 class="row">${right}/${total} are Correct </h2>
+    `;
+}
 
 getQuestion();
