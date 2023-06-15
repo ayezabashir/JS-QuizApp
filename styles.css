@@ -22,7 +22,7 @@ body {
 
 .box {
   width: 450px;
-  min-height: 250px;
+  height: auto;
   padding: 1rem;
   background: rgb(177, 211, 245);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
@@ -37,6 +37,7 @@ body {
 
 .btn {
   width: 100%;
+  cursor: pointer;
   padding: 0.5rem;
   font-size: 18px;
   outline: none;
